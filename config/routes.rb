@@ -53,4 +53,19 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # RUTEO PARA PAGINAS ESTATICAS
+  # Rutea por default a /about.html cuando solo usas el http://localhost:3000/
+  # La parte que dice root como que apunta a http://localhost:3000
+  # Se podria leer asi: redireccionar about.html cuando se solicite root
+  # Este ejemplo muestra como Rails puede entregar una Pagina Estatica siguiendo
+  # el diagrama del patron Router-Controller-Model-View
+  # root to: redirect('/about.html')
+
+  # RUTEO PARA PAGINAS DINAMICAS LIGADAS A M-V-C
+  # 
+  # Cualquier peticion a la raiz de la aplicacion (http://localhost:3000/) sera 
+  # redireccionada al ControlerVisitor accion o metodo "new"
+  root to: 'visitors#new'
+
 end
